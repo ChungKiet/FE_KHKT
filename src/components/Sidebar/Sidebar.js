@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from "logo.svg";
 
 const File = (props) => {
   const { node, ...rest } = props;
@@ -43,7 +44,12 @@ const Sidebar = (props) => {
   const { nodeList, ...rest } = props;
 
   return (
-    <div className="fixed top-0 left-0 w-72 h-screen shrink-0 flex justify-center p-3 overflow-auto text-white bg-slate-200">
+    <div className="fixed top-0 left-0 w-72 h-screen shrink-0 flex flex-col gap-3 p-3 overflow-auto text-white bg-slate-300">
+      <img
+        src={logo}
+        className="w-14 h-auto shrink-0 animate-[App-logo-spin_infinite_20s_linear]"
+        alt="logo"
+      />
       <div className="w-full flex flex-col gap-3">
         {nodeList.map((item, index) => (
           <File node={item}></File>

@@ -5,6 +5,7 @@ export const AppStore = createStore({
     groupName: "",
     chemical: "",
     typeSpectrum: "",
+    parentPath: [],
   },
   document: { url: "" },
   contentUrl: "",

@@ -9,18 +9,19 @@ const File = (props) => {
 
   const onNodeClick = () => {
     if (!node?.children) {
-      console.log(node);
       if (node.url)
         updateAppStore((draft) => {
           draft.document = node;
         });
-      else
+      else {
         updateAppStore((draft) => {
           draft.material.typeChemical = parentPath[1];
           draft.material.groupName = parentPath[2];
           draft.material.chemical = parentPath[3];
           draft.material.typeSpectrum = node.id;
+          draft.material.parentPath = parentPath;
         });
+      }
     }
     if (node?.children?.length) setShowChildren(!showChildren);
   };

@@ -115,6 +115,11 @@ function Main() {
   }, [appStore.document]);
 
   useEffect(() => {
+    // let path = appStore.parentPath;
+    // path?.shift();
+    // updateAppStore((draft) => {
+    //   draft.material.parentPath = path;
+    // });
     setContent(
       material
         .filter(
@@ -133,7 +138,10 @@ function Main() {
       <Sidebar nodeList={menu} />
       <div className="w-full p-5 min-h-screen">
         <div className="mx-auto max-w-5xl">
-          {/* <h1 className=" text-center font-black text-4xl">Nghiên cứu phổ</h1> */}
+          <h1 className=" text-center font-black text-4xl uppercase">
+            Nghiên cứu ứng dụng chuyển đổi số trong môn Hóa học
+          </h1>
+          <br />
           {/* <div className="mt-6 w-full flex gap-6">
             <button
               className={`w-full h-12 text-gray-800 text-xl font-bold shadow hover:shadow-xl rounded-lg transition-all ${
@@ -160,14 +168,24 @@ function Main() {
             <div dangerouslySetInnerHTML={{ __html: `${HTML_STRING}` }} />
           </div> */}
           {!!content?.url ? (
-            <iframe
-              className="w-full h-[calc(100vh-100px)] mt-4"
-              src={content?.url}
-              title="Giới thiệu"
-            />
+            <>
+              <h4 className=" text-left font-black text-3xl">
+                {content?.name}
+              </h4>
+              <iframe
+                className="w-full h-[calc(100vh-100px)] mt-4"
+                src={content?.url}
+                title="Giới thiệu"
+              />
+            </>
           ) : null}
           {!!content?.videoUrl ? (
-            <video className="mt-4" controls src={content?.videoUrl} />
+            <>
+              <h4 className=" text-left font-black text-3xl">
+                {appStore?.material?.parentPath.join(">")}
+              </h4>
+              <video className="mt-4" controls src={content?.videoUrl} />
+            </>
           ) : null}
         </div>
       </div>

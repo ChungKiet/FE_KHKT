@@ -36,7 +36,7 @@ function Main() {
   const [menu, setMenu] = useState([]);
   const [material, setMaterial] = useState([]);
   const [content, setContent] = useState({});
-  const [showSidebar, setShowSidebar] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(true);
 
   const fetchMenu = async () => {
     const res = await getMenu();
@@ -137,20 +137,23 @@ function Main() {
   return (
     <div className="flex lg:pl-72 bg-slate-200">
       <Sidebar nodeList={menu} show={showSidebar} />
-      <div className="w-full p-5 min-h-screen flex flex-col justify-between relative">
+      <div className="w-full p-5 min-h-screen flex flex-col justify-between items-center relative">
         <div className=" absolute top-0 left-0 right-0 p-2 bg-white">
-          <h1 className=" hidden lg:block text-center font-black text-3xl uppercase">
+          <h1 className="hidden lg:block text-center font-black text-3xl uppercase">
             Nghiên cứu ứng dụng chuyển đổi số trong môn Hóa học
           </h1>
           <span
-            className=" float-right"
+            className="block lg:hidden float-right"
             onClick={() => setShowSidebar(!showSidebar)}
           >
             <i class="fa-solid fa-bars fa-2x"></i>
           </span>
         </div>
-        <br className=" mt-8" />
-        <div className="mx-auto max-w-5xl">
+        <h1 className=" mt-8 lg:hidden block text-center font-black text-3xl uppercase">
+          Nghiên cứu ứng dụng chuyển đổi số trong môn Hóa học
+        </h1>
+        <br className="" />
+        <div className=" mt-6 w-full">
           {!!content?.url ? (
             <>
               <h4 className=" text-left font-black text-2xl">

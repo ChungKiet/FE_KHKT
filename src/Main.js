@@ -46,12 +46,12 @@ function Main() {
           setMenu([
             {
               name: "Tài liệu tham khảo",
-              id: "document",
+              // id: "document",
               children: PDF_DOCUMENT,
             },
             {
               name: "Hướng dẫn giải",
-              id: "guide",
+              // id: "guide",
               children: data,
             },
           ]);
@@ -182,7 +182,9 @@ function Main() {
           {!!content?.videoUrl ? (
             <>
               <h4 className=" text-left font-black text-3xl">
-                {appStore?.material?.parentPath.join(">")}
+                {appStore?.material?.parentPath
+                  ?.concat(appStore?.material?.typeSpectrum)
+                  .join(" > ")}
               </h4>
               <video className="mt-4" controls src={content?.videoUrl} />
             </>

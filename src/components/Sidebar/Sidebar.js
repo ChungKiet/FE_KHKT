@@ -15,9 +15,9 @@ const File = (props) => {
         });
       else {
         updateAppStore((draft) => {
-          draft.material.typeChemical = parentPath[1];
-          draft.material.groupName = parentPath[2];
-          draft.material.chemical = parentPath[3];
+          draft.material.typeChemical = parentPath[0];
+          draft.material.groupName = parentPath[1];
+          draft.material.chemical = parentPath[2];
           draft.material.typeSpectrum = node.id;
           draft.material.parentPath = parentPath;
         });
@@ -51,7 +51,7 @@ const File = (props) => {
           } gap-3 flex flex-col transition-[all_0.5s_cubic-bezier(0.4,_0,_0.2,_1)] duration-300`}
         >
           {node?.children?.map((item, index) => (
-            <File node={item} parentPath={parentPath.concat(node?.id)} />
+            <File node={item} parentPath={parentPath.concat(node?.id || [])} />
           ))}
         </div>
       )}

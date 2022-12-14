@@ -36,6 +36,7 @@ function Main() {
   const [menu, setMenu] = useState([]);
   const [material, setMaterial] = useState([]);
   const [content, setContent] = useState({});
+  const [showSidebar, setShowSidebar] = useState(false);
 
   const fetchMenu = async () => {
     const res = await getMenu();
@@ -134,12 +135,20 @@ function Main() {
   }, [appStore.material]);
 
   return (
-    <div className="flex pl-72 bg-slate-200">
-      <Sidebar nodeList={menu} />
+    <div className="flex lg:pl-72 bg-slate-200">
+      <Sidebar nodeList={menu} show={showSidebar} />
       <div className="w-full p-5 min-h-screen flex flex-col justify-between relative">
-        <h1 className=" text-center font-black text-3xl uppercase absolute top-0 left-0 right-0 p-2 bg-white">
-          Nghiên cứu ứng dụng chuyển đổi số trong môn Hóa học
-        </h1>
+        <div className=" absolute top-0 left-0 right-0 p-2 bg-white">
+          <h1 className=" hidden lg:block text-center font-black text-3xl uppercase">
+            Nghiên cứu ứng dụng chuyển đổi số trong môn Hóa học
+          </h1>
+          <span
+            className=" float-right"
+            onClick={() => setShowSidebar(!showSidebar)}
+          >
+            <i class="fa-solid fa-bars fa-2x"></i>
+          </span>
+        </div>
         <br className=" mt-8" />
         <div className="mx-auto max-w-5xl">
           {!!content?.url ? (
@@ -168,7 +177,7 @@ function Main() {
         <footer className="mt-4 w-full rounded-lg flex gap-4 p-4 bg-gray-100">
           <a
             className=" text-lg font-semibold hover:text-blue-900"
-            href="https://sdbs.db.aist.go.jp/sdbs/cgi-bin/direct_frame_top.cgi?fbclid=IwAR3tbVQQqqT517_Rr3CPtzsEH18ZD7EomVSIRvwvcH-Mjvl-34kNFiFqyfA"
+            href="https://webbook.nist.gov/chemistry/?fbclid=IwAR3DsDLBb7bZWIw8Z-VICWlkXLgT6__5qNoXK-jVqf2NnxtyVNVfw9oSMlE"
             target="_blank"
             rel="noreferrer"
           >
@@ -176,7 +185,7 @@ function Main() {
           </a>
           <a
             className=" text-lg font-semibold hover:text-blue-900"
-            href="https://webbook.nist.gov/chemistry/?fbclid=IwAR3DsDLBb7bZWIw8Z-VICWlkXLgT6__5qNoXK-jVqf2NnxtyVNVfw9oSMlE"
+            href="https://sdbs.db.aist.go.jp/sdbs/cgi-bin/direct_frame_top.cgi?fbclid=IwAR3tbVQQqqT517_Rr3CPtzsEH18ZD7EomVSIRvwvcH-Mjvl-34kNFiFqyfA"
             target="_blank"
             rel="noreferrer"
           >

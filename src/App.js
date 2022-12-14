@@ -1,6 +1,6 @@
 import httpStatus from "http-status";
 import { useEffect, useState } from "react";
-import { getMenu } from "services";
+import { getDocument, getMaterial, getMenu } from "services";
 import { Sidebar } from "../src/components";
 
 function App() {
@@ -1812,6 +1812,8 @@ function App() {
     // if (isLoading) return null;
     // setIsLoading(true);
     const res = await getMenu();
+    const res2 = await getMaterial();
+    const res3 = await getDocument();
     console.log(res);
     if (res) {
       switch (res.status) {

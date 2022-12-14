@@ -50,7 +50,7 @@ function Main() {
               children: PDF_DOCUMENT,
             },
             {
-              name: "Hướng dẫn giải",
+              name: "Video tham khảo",
               // id: "guide",
               children: data,
             },

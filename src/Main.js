@@ -136,37 +136,12 @@ function Main() {
   return (
     <div className="flex pl-72 bg-slate-200">
       <Sidebar nodeList={menu} />
-      <div className="w-full p-5 min-h-screen flex flex-col justify-between">
+      <div className="w-full p-5 min-h-screen flex flex-col justify-between relative">
+        <h1 className=" text-center font-black text-3xl uppercase absolute top-0 left-0 right-0 p-2 bg-white">
+          Nghiên cứu ứng dụng chuyển đổi số trong môn Hóa học
+        </h1>
+        <br className=" mt-8" />
         <div className="mx-auto max-w-5xl">
-          <h1 className=" text-center font-black text-3xl uppercase">
-            Nghiên cứu ứng dụng chuyển đổi số trong môn Hóa học
-          </h1>
-          <br />
-          {/* <div className="mt-6 w-full flex gap-6">
-            <button
-              className={`w-full h-12 text-gray-800 text-xl font-bold shadow hover:shadow-xl rounded-lg transition-all ${
-                contentType === CONTENT_TYPE.theory
-                  ? " bg-slate-400 text-gray-900"
-                  : "bg-white text-gray-700"
-              }`}
-              onClick={() => setContentType(CONTENT_TYPE.theory)}
-            >
-              Lý thuyết
-            </button>
-            <button
-              className={`w-full h-12 text-gray-800 text-xl font-bold shadow hover:shadow-xl rounded-lg transition-all ${
-                contentType === CONTENT_TYPE.video
-                  ? " bg-slate-400 text-gray-900"
-                  : "bg-white text-gray-700"
-              }`}
-              onClick={() => setContentType(CONTENT_TYPE.video)}
-            >
-              Video hướng dẫn
-            </button>
-          </div> */}
-          {/* <div className="mt-6 p-5 rounded-md bg-white shadow-lg">
-            <div dangerouslySetInnerHTML={{ __html: `${HTML_STRING}` }} />
-          </div> */}
           {!!content?.url ? (
             <>
               <h4 className=" text-left font-black text-2xl">
@@ -205,7 +180,7 @@ function Main() {
             target="_blank"
             rel="noreferrer"
           >
-            Ngân hàng phổ Sb
+            Ngân hàng phổ Sdbs
           </a>
         </footer>
       </div>

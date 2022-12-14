@@ -60,25 +60,35 @@ const File = (props) => {
 };
 
 const Sidebar = (props) => {
-  const { nodeList, show, ...rest } = props;
+  const { nodeList, show, setShow, ...rest } = props;
 
   return (
-    <div
-      className={`fixed ${
-        show ? "left-0" : " -left-full"
-      } z-10 top-0 left-0 w-72 h-screen shrink-0 flex-col gap-3 p-3 overflow-auto text-white bg-slate-300 transition-all`}
-    >
-      {/* <img
+    <>
+      <div
+        onClick={() => setShow(false)}
+        className={`${
+          show ? "fixed lg:hidden" : "hidden"
+        } inset-0 bg-[#00000051] z-10`}
+      >
+        a
+      </div>
+      <div
+        className={`fixed ${
+          show ? "left-0" : " -left-full"
+        } z-20 top-0 left-0 w-72 h-screen shrink-0 flex-col gap-3 p-3 overflow-auto text-white bg-slate-300 transition-all`}
+      >
+        {/* <img
         src={logo}
         className="w-14 h-auto shrink-0 animate-[App-logo-spin_infinite_20s_linear]"
         alt="logo"
       /> */}
-      <div className="w-full flex flex-col gap-3">
-        {nodeList.map((item, index) => (
-          <File node={item} parentPath={[]} />
-        ))}
+        <div className="w-full flex flex-col gap-3">
+          {nodeList.map((item, index) => (
+            <File node={item} parentPath={[]} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

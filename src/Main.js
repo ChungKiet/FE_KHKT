@@ -136,10 +136,10 @@ function Main() {
 
   return (
     <div className="flex lg:pl-72 bg-slate-200">
-      <Sidebar nodeList={menu} show={showSidebar} />
+      <Sidebar nodeList={menu} show={showSidebar} setShow={setShowSidebar} />
       <div className="w-full p-5 min-h-screen flex flex-col justify-between items-center relative">
         <div className=" absolute top-0 left-0 right-0 p-2 bg-white">
-          <h1 className="hidden lg:block text-center font-black text-3xl uppercase">
+          <h1 className="hidden lg:block text-center font-black text-2xl xl:text-3xl uppercase">
             Nghiên cứu ứng dụng chuyển đổi số trong môn Hóa học
           </h1>
           <span
@@ -149,33 +149,34 @@ function Main() {
             <i class="fa-solid fa-bars fa-2x"></i>
           </span>
         </div>
-        <h1 className=" mt-8 lg:hidden block text-center font-black text-3xl uppercase">
-          Nghiên cứu ứng dụng chuyển đổi số trong môn Hóa học
-        </h1>
-        <br className="" />
-        <div className=" mt-6 w-full">
-          {!!content?.url ? (
-            <>
-              <h4 className=" text-left font-black text-2xl">
-                {content?.name}
-              </h4>
-              <iframe
-                className="w-full h-[calc(100vh-100px)] mt-4"
-                src={content?.url}
-                title="Giới thiệu"
-              />
-            </>
-          ) : null}
-          {!!content?.videoUrl ? (
-            <>
-              <h4 className=" text-left font-black text-2xl">
-                {appStore?.material?.parentPath
-                  ?.concat(appStore?.material?.typeSpectrum)
-                  .join(" > ")}
-              </h4>
-              <video className="mt-4" controls src={content?.videoUrl} />
-            </>
-          ) : null}
+        <div className=" lg:mt-6 w-full">
+          <h1 className=" mt-8 lg:hidden block text-center font-black text-2xl xl:text-3xl uppercase">
+            Nghiên cứu ứng dụng chuyển đổi số trong môn Hóa học
+          </h1>
+          <div className="mt-6">
+            {!!content?.url ? (
+              <>
+                <h4 className=" text-left font-black text-2xl">
+                  {content?.name}
+                </h4>
+                <iframe
+                  className="w-full h-[calc(100vh-100px)] mt-4"
+                  src={content?.url}
+                  title="Giới thiệu"
+                />
+              </>
+            ) : null}
+            {!!content?.videoUrl ? (
+              <>
+                <h4 className=" text-left font-black text-2xl">
+                  {appStore?.material?.parentPath
+                    ?.concat(appStore?.material?.typeSpectrum)
+                    .join(" > ")}
+                </h4>
+                <video className="mt-4" controls src={content?.videoUrl} />
+              </>
+            ) : null}
+          </div>
         </div>
         <footer className="mt-4 w-full rounded-lg flex gap-4 p-4 bg-gray-100">
           <a

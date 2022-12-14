@@ -1812,14 +1812,56 @@ function App() {
     // if (isLoading) return null;
     // setIsLoading(true);
     const res = await getMenu();
-    const res2 = await getMaterial();
-    const res3 = await getDocument();
     console.log(res);
     if (res) {
       switch (res.status) {
         case httpStatus.OK: {
           const { data } = res;
-          setMenu((pre) => [...pre, ...data.data]);
+          // setMenu((pre) => [...pre, ...data.data]);
+          break;
+        }
+        case httpStatus.NOT_FOUND: {
+          break;
+        }
+        default:
+          break;
+      }
+    }
+    // setIsLoading(false);
+    return null;
+  };
+  const fetchMaterial = async () => {
+    // if (isLoading) return null;
+    // setIsLoading(true);
+    const res = await getMaterial();
+    console.log(res);
+    if (res) {
+      switch (res.status) {
+        case httpStatus.OK: {
+          const { data } = res;
+          // setMenu((pre) => [...pre, ...data.data]);
+          break;
+        }
+        case httpStatus.NOT_FOUND: {
+          break;
+        }
+        default:
+          break;
+      }
+    }
+    // setIsLoading(false);
+    return null;
+  };
+  const fetchDocument = async () => {
+    // if (isLoading) return null;
+    // setIsLoading(true);
+    const res = await getDocument();
+    console.log(res);
+    if (res) {
+      switch (res.status) {
+        case httpStatus.OK: {
+          const { data } = res;
+          // setMenu((pre) => [...pre, ...data.data]);
           break;
         }
         case httpStatus.NOT_FOUND: {
@@ -1835,6 +1877,8 @@ function App() {
 
   useEffect(() => {
     fetchMenu();
+    fetchMaterial();
+    fetchDocument();
   }, []);
   return (
     <div className="flex pl-72 bg-slate-200">

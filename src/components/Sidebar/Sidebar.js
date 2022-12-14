@@ -14,7 +14,7 @@ const File = (props) => {
           node?.children?.length ? setShowChildren(!showChildren) : ""
         }
       >
-        {node?.id}
+        {node?.name}
         {!!node?.children?.length && (
           <i
             className={`fa-solid fa-chevron-down transition-transform ${

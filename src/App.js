@@ -6,16 +6,37 @@ import { Sidebar } from "../src/components";
 function App() {
   const TEMP_NODE = [
     {
-      id: "Tài liệu tham khảo",
+      name: "Tài liệu tham khảo",
       children: [
         {
-          id: "Giới thiệu",
-          children: [],
+          name: "Giới thiệu",
+          type: "INTRODUCTION",
+          url: "https://khkt-video.s3.ap-southeast-1.amazonaws.com/Introduction_docs.pdf",
+        },
+        {
+          name: "Phổ IR",
+          type: "IR",
+          url: "https://khkt-video.s3.ap-southeast-1.amazonaws.com/IR_docs.pdf",
+        },
+        {
+          name: "Phổ MS",
+          type: "MS",
+          url: "https://khkt-video.s3.ap-southeast-1.amazonaws.com/MS_docs.pdf",
+        },
+        {
+          name: "Phổ NMR (13C)",
+          type: "NMR_13C",
+          url: "https://khkt-video.s3.ap-southeast-1.amazonaws.com/NMR_13C_docs.pdf",
+        },
+        {
+          name: "Phổ NMR (1H)",
+          type: "NMR_1H",
+          url: "https://khkt-video.s3.ap-southeast-1.amazonaws.com/NMR_H_docs.pdf",
         },
       ],
     },
     {
-      id: "Hướng dẫn giải",
+      name: "Hướng dẫn giải",
       children: [
         {
           id: "HYDROCACBON",
@@ -1819,7 +1840,7 @@ function App() {
       <div className="w-full p-5 min-h-screen">
         <div className="mx-auto max-w-5xl">
           <h1 className=" text-center font-black text-4xl">Nghiên cứu phổ</h1>
-          <div className="mt-6 w-full flex gap-6">
+          {/* <div className="mt-6 w-full flex gap-6">
             <button
               className={`w-full h-12 text-gray-800 text-xl font-bold shadow hover:shadow-xl rounded-lg transition-all ${
                 contentType === CONTENT_TYPE.theory
@@ -1840,15 +1861,20 @@ function App() {
             >
               Video hướng dẫn
             </button>
-          </div>
+          </div> */}
           {/* <div className="mt-6 p-5 rounded-md bg-white shadow-lg">
             <div dangerouslySetInnerHTML={{ __html: `${HTML_STRING}` }} />
           </div> */}
           <iframe
-            className="w-full h-[calc(100vh-100px)]"
+            className="w-full h-[calc(100vh-100px)] mt-4"
             src="https://khkt-video.s3.ap-southeast-1.amazonaws.com/Introduction_docs.pdf"
             title="Giới thiệu"
-          ></iframe>
+          />
+          <video
+            className="mt-4"
+            controls
+            src="https://khkt-video.s3.ap-southeast-1.amazonaws.com/1+-+hexyne+IR.mp4"
+          />
         </div>
       </div>
     </div>

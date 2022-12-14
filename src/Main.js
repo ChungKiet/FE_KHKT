@@ -165,8 +165,7 @@ function Main() {
                   title="Giới thiệu"
                 />
               </>
-            ) : null}
-            {!!content?.videoUrl ? (
+            ) : !!content?.videoUrl ? (
               <>
                 <h4 className=" text-left font-black text-2xl">
                   {appStore?.material?.parentPath
@@ -175,7 +174,11 @@ function Main() {
                 </h4>
                 <video className="mt-4" controls src={content?.videoUrl} />
               </>
-            ) : null}
+            ) : (
+              <div className=" text-2xl">
+                Hãy chọn nội dung muốn đọc trong sidebar
+              </div>
+            )}
           </div>
         </div>
         <footer className="mt-4 w-full rounded-lg flex gap-4 p-4 bg-gray-100">

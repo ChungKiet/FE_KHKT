@@ -136,9 +136,9 @@ function Main() {
   return (
     <div className="flex pl-72 bg-slate-200">
       <Sidebar nodeList={menu} />
-      <div className="w-full p-5 min-h-screen">
+      <div className="w-full p-5 min-h-screen flex flex-col justify-between">
         <div className="mx-auto max-w-5xl">
-          <h1 className=" text-center font-black text-4xl uppercase">
+          <h1 className=" text-center font-black text-3xl uppercase">
             Nghiên cứu ứng dụng chuyển đổi số trong môn Hóa học
           </h1>
           <br />
@@ -169,7 +169,7 @@ function Main() {
           </div> */}
           {!!content?.url ? (
             <>
-              <h4 className=" text-left font-black text-3xl">
+              <h4 className=" text-left font-black text-2xl">
                 {content?.name}
               </h4>
               <iframe
@@ -181,7 +181,7 @@ function Main() {
           ) : null}
           {!!content?.videoUrl ? (
             <>
-              <h4 className=" text-left font-black text-3xl">
+              <h4 className=" text-left font-black text-2xl">
                 {appStore?.material?.parentPath
                   ?.concat(appStore?.material?.typeSpectrum)
                   .join(" > ")}

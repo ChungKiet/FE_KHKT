@@ -46,7 +46,7 @@ const File = (props) => {
         <div
           className={`${
             showChildren
-              ? "m-3 h-auto max-h-[999px]"
+              ? "m-3 h-auto max-h-[1999px]"
               : " max-h-[0] overflow-hidden"
           } gap-3 flex flex-col transition-[all_0.5s_cubic-bezier(0.4,_0,_0.2,_1)] duration-300`}
         >

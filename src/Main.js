@@ -190,6 +190,24 @@ function Main() {
             </>
           ) : null}
         </div>
+        <footer className="mt-4 w-full rounded-lg flex gap-4 p-4 bg-gray-100">
+          <a
+            className=" text-lg font-semibold hover:text-blue-900"
+            href="https://sdbs.db.aist.go.jp/sdbs/cgi-bin/direct_frame_top.cgi?fbclid=IwAR3tbVQQqqT517_Rr3CPtzsEH18ZD7EomVSIRvwvcH-Mjvl-34kNFiFqyfA"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ngân hàng phổ Webook
+          </a>
+          <a
+            className=" text-lg font-semibold hover:text-blue-900"
+            href="https://webbook.nist.gov/chemistry/?fbclid=IwAR3DsDLBb7bZWIw8Z-VICWlkXLgT6__5qNoXK-jVqf2NnxtyVNVfw9oSMlE"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ngân hàng phổ Sb
+          </a>
+        </footer>
       </div>
     </div>
   );

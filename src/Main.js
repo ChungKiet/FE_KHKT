@@ -32,6 +32,23 @@ function Main() {
       url: "https://khkt-video.s3.ap-southeast-1.amazonaws.com/NMR_H_docs.pdf",
     },
   ];
+  const SPECTRUM_REF = [
+    {
+      name: "Ngân hàng phổ WebBook",
+      ref_url: "https://webbook.nist.gov/chemistry/?fbclid=IwAR3DsDLBb7bZWIw8Z-VICWlkXLgT6__5qNoXK-jVqf2NnxtyVNVfw9oSMlE",
+    },
+    {
+      name: "Ngân hàng phổ Sdbs",
+      ref_url: "https://sdbs.db.aist.go.jp/sdbs/cgi-bin/direct_frame_top.cgi?fbclid=IwAR3tbVQQqqT517_Rr3CPtzsEH18ZD7EomVSIRvwvcH-Mjvl-34kNFiFqyfA"
+    }
+  ]
+  const DISCUSS_FORM = [
+    {
+      name: "Form thảo luận",
+      ref_url: "https://docs.google.com/forms/d/e/1FAIpQLSfMvRo-ot2K-7j3qgGoBPd2tf_FKFhwGDZSyGYMJcSN-Q8D9w/viewform"
+    }
+  ]
+
   const [appStore, updateAppStore] = useAppStore();
   const [menu, setMenu] = useState([]);
   const [material, setMaterial] = useState([]);
@@ -55,6 +72,14 @@ function Main() {
               // id: "guide",
               children: data,
             },
+            {
+              name:"Ngân hàng phổ",
+              children: SPECTRUM_REF
+            },
+            {
+              name: "Góp ý - Thảo luận",
+              children: DISCUSS_FORM
+            }
           ]);
           break;
         }
@@ -182,7 +207,7 @@ function Main() {
           </div>
         </div>
         <footer className="mt-4 w-full rounded-lg flex gap-4 p-4 bg-gray-100">
-          <a
+          {/* <a
             className=" text-lg font-semibold hover:text-blue-900"
             href="https://webbook.nist.gov/chemistry/?fbclid=IwAR3DsDLBb7bZWIw8Z-VICWlkXLgT6__5qNoXK-jVqf2NnxtyVNVfw9oSMlE"
             target="_blank"
@@ -197,7 +222,7 @@ function Main() {
             rel="noreferrer"
           >
             Ngân hàng phổ Sdbs
-          </a>
+          </a> */}
         </footer>
       </div>
     </div>

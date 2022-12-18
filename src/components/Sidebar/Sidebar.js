@@ -13,6 +13,9 @@ const File = (props) => {
         updateAppStore((draft) => {
           draft.document = node;
         });
+      else if (node.ref_url) {
+        window.open(node.ref_url, '_blank')
+      }
       else {
         updateAppStore((draft) => {
           draft.material.typeChemical = parentPath[0];
